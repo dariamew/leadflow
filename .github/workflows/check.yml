@@ -37,7 +37,7 @@ jobs:
       - run: pnpm --dir frontend build
       - run: ruff check .
       - run: ruff format --check .
-      - run: pytest -q
+      - run: python -m pytest -q
       - run: alembic upgrade head
       - run: python -m scripts.smoke
       - run: alembic check
